@@ -13,3 +13,100 @@
 .quest-progress-wrap .progress #progress{height:100%;border-radius:999px;background:repeating-linear-gradient(45deg,#df88a0 0px,#df88a0 25px,#eda7b6 25px,#eda7b6 50px);transition:width .3s ease}
 .finish-flag{flex:0 0 auto;font-size:26px;line-height:1;white-space:nowrap}
 @media(max-width:360px){.quest-progress-wrap{gap:7px}.quest-progress-wrap .progress{height:28px}.finish-flag{font-size:22px}}
+
+/* 2026-10-23: true single-viewport mobile first view */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap');
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+.shell{padding-inline:clamp(13px,4vw,22px)}
+.brand{height:45px;min-height:45px;padding:3px 0;gap:7px;font-size:16px;line-height:1.05}
+.brand small{font-size:9px;margin-top:2px}
+.coin{width:27px;height:27px;font-size:14px}
+#hero.active{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:0;min-height:0;height:calc(100dvh - 45px - env(safe-area-inset-bottom, 0px));padding:4px 0 10px;overflow:hidden}
+#hero .eyebrow{flex:0 0 auto;font-size:clamp(10px,2.8vw,12px);padding:5px 12px}
+#hero h1{flex:0 0 auto;font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif;font-size:clamp(23px,6.7vw,32px);font-weight:900;line-height:1.24;letter-spacing:-.045em;margin:4px 0 0}
+#hero h1 span{white-space:nowrap}
+#hero .lead{flex:0 0 auto;font-size:clamp(10px,2.9vw,13px);line-height:1.45;margin:0}
+#hero .mascot{flex:1 1 auto;min-height:62px;max-height:clamp(105px,25dvh,205px);height:auto;width:100%;margin:0;overflow:hidden}
+#hero .mascot img{max-height:100%;height:100%;width:100%;object-fit:contain}
+#hero .benefits{flex:0 0 auto;width:100%;margin:4px 0 8px;padding:6px 14px;border-radius:14px}
+#hero .benefits p{font-size:clamp(10px,2.9vw,12px);line-height:1.2;margin:5px 0}
+#hero .primary{flex:0 0 auto;min-height:46px;padding:9px 12px;font-size:15px}
+#hero .muted{flex:0 0 auto;font-size:10px;margin-top:9px}
+body:has(#hero.active) footer{display:none}
+@media(max-height:700px){#hero.active{padding:2px 0 6px}#hero h1{font-size:clamp(21px,6vw,28px)}#hero .mascot{max-height:19dvh}#hero .benefits{padding:4px 12px;margin:2px 0 5px}#hero .benefits p{margin:3px 0}#hero .primary{min-height:42px}#hero .muted{margin-top:4px}}
+@media(max-height:570px){#hero .lead{font-size:10px}#hero .mascot{max-height:15dvh}#hero .benefits p{font-size:10px}#hero h1{font-size:21px}}
+@media(max-width:350px){#hero h1{font-size:clamp(21px,6.5vw,24px)}.shell{padding-inline:12px}}
+
+/* Reference FV: compact, mobile viewport-height layout. */
+html,body{min-height:100%;overflow-x:hidden}
+.shell{min-height:100dvh;display:flex;flex-direction:column;padding:0 15px}
+.brand{flex:0 0 auto;padding:7px 0 5px;font-size:13px;gap:6px;line-height:1.05}
+.brand small{font-size:7px;margin-top:3px}
+.coin{width:23px;height:23px;font-size:12px;border-width:1.5px}
+#hero.active{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:space-between;text-align:center;padding:3px 0 max(8px,env(safe-area-inset-bottom));}
+#hero .hero-content{display:flex;flex-direction:column;align-items:center;min-height:0;flex:1}
+#hero .eyebrow{font-family:'M PLUS Rounded 1c',sans-serif;background:#fbdfe5;color:#c9788b;font-size:clamp(9px,2.7vw,12px);font-weight:800;line-height:1.2;padding:6px 13px;white-space:nowrap}
+#hero h1{font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif;font-size:clamp(27px,8.1vw,40px);font-weight:900;line-height:1.24;letter-spacing:-.055em;margin:10px 0 5px;color:#644940}
+#hero h1 span{color:#d77f92;white-space:nowrap}
+#hero .lead{font-size:clamp(10px,2.65vw,12px);font-weight:650;line-height:1.5;margin:4px 0 0;color:#775e55}
+#hero .hero-art{position:relative;width:100%;flex:1;min-height:95px;max-height:270px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;margin-top:4px}
+#hero .hero-art img{position:relative;z-index:2;display:block;height:100%;max-width:86%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 4px 0 #f6d4ca55)}
+#hero .pink-blob{position:absolute;background:#fbdadf;opacity:.7;border-radius:50%;width:62%;height:65%;bottom:-27%;z-index:0}
+#hero .pink-blob.left{left:-28%;transform:rotate(22deg)}#hero .pink-blob.right{right:-26%;transform:rotate(-24deg)}
+#hero .sparkle{position:absolute;color:#efb843;font-size:28px;z-index:3}#hero .sparkle-left{left:7%;top:8%}#hero .sparkle-right{right:8%;top:20%;font-size:18px}
+#hero .bulb{position:absolute;z-index:3;right:12%;top:8%;font-size:26px;transform:rotate(16deg)}
+#hero .hero-bottom{position:relative;z-index:5;flex:0 0 auto;background:#fff;border-radius:22px 22px 14px 14px;padding:10px 9px 9px;box-shadow:0 -3px 22px #eeb9b825;margin-top:-7px}
+#hero .rewards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:0 0 11px}
+#hero .reward{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:clamp(9px,2.6vw,11px);font-weight:800;line-height:1.35;letter-spacing:-.025em;color:#63493f}
+#hero .reward-icon{width:clamp(40px,13vw,56px);height:clamp(40px,13vw,56px);display:grid;place-items:center;background:#fff6e8;border-radius:50%;font-size:clamp(22px,7vw,29px)}
+#hero .primary{min-height:44px;padding:8px 10px;font-size:clamp(13px,3.8vw,16px);font-family:'M PLUS Rounded 1c',sans-serif;font-weight:900;background:linear-gradient(180deg,#e38d9e,#d4768b);box-shadow:0 5px 0 #b6677b}
+#hero .muted{font-size:10px;margin-top:10px;color:#9c8a80}
+#hero~footer{font-size:8px;padding:5px 0}
+@media(max-height:730px){#hero h1{font-size:clamp(25px,7.6vw,35px);margin:6px 0 3px}#hero .lead{font-size:10px;line-height:1.35}#hero .hero-art{min-height:80px}#hero .hero-bottom{padding:7px 8px 7px}#hero .rewards{margin-bottom:8px}#hero .reward-icon{width:38px;height:38px;font-size:21px}#hero .reward{gap:3px;font-size:9px}#hero .primary{min-height:40px}#hero .muted{margin-top:8px}}
+@media(max-height:600px){#hero .eyebrow{padding:4px 10px}#hero h1{font-size:clamp(22px,6.9vw,30px);line-height:1.16}#hero .hero-art{min-height:65px}#hero .reward-icon{width:32px;height:32px;font-size:19px}#hero .hero-bottom{padding:6px 7px}#hero .rewards{margin-bottom:6px}#hero .primary{min-height:36px}#hero .muted{margin-top:6px}}
+@media(min-width:600px){.shell{max-width:480px}}
+
+/* Quiz and results: reference-inspired soft game layout, one question per screen */
+.shell{display:flex;flex-direction:column;min-height:100dvh;overflow:hidden}
+.brand{flex:0 0 auto}
+.screen.active{flex:1 0 auto}
+#quiz{position:relative;padding:6px 0 0;min-height:calc(100dvh - 92px);display:none;flex-direction:column;isolation:isolate}
+#quiz.active{display:flex}
+#quiz:before{content:"";position:absolute;z-index:-1;bottom:-18px;left:-22px;right:-22px;height:28%;background:radial-gradient(ellipse at 15% 100%,#ffe3e5 0 48%,transparent 49%),radial-gradient(ellipse at 85% 100%,#ffe7e8 0 47%,transparent 48%);pointer-events:none}
+#quiz .quiz-top{margin:2px 0 10px;min-height:25px}
+#quiz .back{font-size:12px;padding:3px 0}
+#quiz #counter{font-size:14px;letter-spacing:.12em}
+#quiz .quest-progress-wrap{margin:0 0 12px;gap:10px}
+#quiz .quest-progress-wrap .progress{height:26px;border-width:3px;padding:3px}
+#quiz .finish-flag{font-size:24px}
+#quiz .question-label{margin:8px 0 4px;color:#d58194;font-family:'M PLUS Rounded 1c',sans-serif;font-size:12px;font-weight:900}
+#quiz #question{font-family:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN',sans-serif;font-size:clamp(20px,5.8vw,28px);line-height:1.4;font-weight:900;letter-spacing:-.045em;color:#67483f;min-height:0;margin:10px 0 20px;text-wrap:balance}
+#quiz .choices{display:grid;gap:10px}
+#quiz .choice{position:relative;min-height:clamp(62px,10.4dvh,86px);padding:12px 55px 12px 18px;border-radius:20px;background:#fffdfb;border:2px solid #f2dadd;font-family:'M PLUS Rounded 1c',sans-serif;font-size:clamp(13px,3.7vw,16px);font-weight:800;line-height:1.45;box-shadow:0 1px 0 #f4e8e5}
+#quiz .choice span{font-size:17px;color:#d98498}
+#quiz .choice:after{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:28px;line-height:1}
+#quiz .choice:nth-child(1):after{content:'👛'}
+#quiz .choice:nth-child(2):after{content:'🪙'}
+#quiz .choice:nth-child(3):after{content:'🐷'}
+#quiz .hint{margin:14px 0 2px;font-size:11px;color:#9c7b70}
+#quiz .hint span{font-size:18px;color:#df91a4;margin:0 9px}
+#quiz .quiz-illustration{position:relative;flex:1;min-height:80px;max-height:210px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;margin:0 -22px}
+#quiz .quiz-illustration img{position:relative;z-index:1;height:100%;max-width:68%;object-fit:contain;object-position:bottom}
+#quiz .quiz-bubble{position:absolute;z-index:2;top:22%;display:grid;place-items:center;border:2px solid #f1c8bd;border-radius:50%;background:#fffaf4;width:56px;height:56px;font-size:25px;color:#b88b72}
+#quiz .bubble-left{left:9%}#quiz .bubble-right{right:9%}
+#result{padding:10px 0 28px}
+#result .result-top{text-align:center;padding:10px 12px 22px;background:linear-gradient(180deg,#fff8f4,#fff0f0);border-radius:25px}
+#result .eyebrow{background:#f7dce3;font-family:'M PLUS Rounded 1c',sans-serif}
+#result .intro{margin:13px 0 0;font-size:13px}
+#result .result-illustration{height:clamp(100px,21dvh,185px);display:flex;justify-content:center;align-items:center}
+#result .result-illustration img{height:100%;object-fit:contain}
+#result .result-icon{font-size:28px;margin:0}
+#result #result-name{font-family:'M PLUS Rounded 1c',sans-serif;font-size:clamp(22px,6.2vw,30px);font-weight:900;margin:5px 0 6px}
+#result #result-description{margin:4px 0;font-size:13px}
+#result .result-card{border:2px solid #f4e1e1;box-shadow:none;border-radius:21px}
+#result .result-card h3,#result .follow h3{font-family:'M PLUS Rounded 1c',sans-serif}
+#result .follow{background:#ffeded}
+#result .follow h3{font-size:clamp(16px,4.5vw,20px);word-break:keep-all}
+#result .follow .primary{font-size:clamp(12px,3.6vw,16px)}
+@media(max-height:720px){#quiz #question{font-size:clamp(18px,5.2vw,24px);margin:6px 0 12px}#quiz .choices{gap:7px}#quiz .choice{min-height:57px;padding:8px 48px 8px 13px}#quiz .quiz-illustration{max-height:135px}#quiz .hint{margin:7px 0 0}#quiz .question-label{margin:3px 0}}
+@media(max-height:610px){#quiz .quiz-illustration{max-height:85px;min-height:55px}#quiz .quest-progress-wrap{margin-bottom:5px}#quiz #question{font-size:18px;margin:5px 0 9px}#quiz .choice{min-height:50px}#quiz .hint{font-size:10px}}
