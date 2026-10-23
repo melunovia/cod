@@ -7,9 +7,6 @@
 .finish-flag{flex:0 0 auto;font-size:26px;line-height:1;white-space:nowrap}
 @media(max-width:360px){.quest-progress-wrap{gap:7px}.quest-progress-wrap .progress{height:28px}.finish-flag{font-size:22px}}
 
-/* Only the quiz progress bar uses the supplied game-inspired design. */
-.quest-progress-wrap{display:flex;align-items:center;gap:12px;width:100%;min-width:0;margin-top:15px}
-.quest-progress-wrap .progress{flex:1;min-width:0;margin-top:0;height:32px;padding:4px;border:4px solid #e7c8b7;border-radius:999px;background:#fff;overflow:hidden;box-shadow:0 3px 0 #f3e2d5}
-.quest-progress-wrap .progress #progress{height:100%;border-radius:999px;background:repeating-linear-gradient(45deg,#df88a0 0px,#df88a0 25px,#eda7b6 25px,#eda7b6 50px);transition:width .3s ease}
-.finish-flag{flex:0 0 auto;font-size:26px;line-height:1;white-space:nowrap}
-@media(max-width:360px){.quest-progress-wrap{gap:7px}.quest-progress-wrap .progress{height:28px}.finish-flag{font-size:22px}}
+/* Keep the result follow heading on exactly two lines on small screens. */
+.follow h3{font-size:clamp(15px,4.5vw,19px)}
+.follow h3 span{white-space:nowrap}
